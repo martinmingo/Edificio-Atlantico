@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#e9f5fc">
+<meta name="description" content="Información para huéspedes del Edificio Atlántico, Santa Teresita: normas, contacto, emergencias y datos útiles.">
+<title>Edificio Atlántico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0}
+img{max-width:100%}
+/* Layout: cartel de balneario — toldo a rayas arriba, columna única de lectura, listas con divisores finos, sin tarjetas apiladas. Tema claro fijo. */
+:root{
+  --paper:#e9f5fc; --ink:#14303f; --muted:#4c6677; --navy:#1d5f8f; --leaf:#78c4ec;
+  --stripe:#cde9f8; --rule:#c9e1ef; --red:#c23a2b; --sky:#f7fcff;
+  --display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:only light;
+}
+*{-webkit-tap-highlight-color:transparent}
+a{color:inherit}
+a:focus{outline:none}
+a:focus-visible{outline:3px solid var(--leaf);outline-offset:3px;border-radius:8px}
+.kv .v{color:var(--ink)!important}
+.kv .v:active{color:var(--navy)!important}
+.p-tel:active,.p-mail:active{background:var(--stripe)!important}
+.p-wa:active{background:#164c74!important}
+.sos a:active{background:#a93225}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5}
+
+.awning{height:46px;background:repeating-linear-gradient(90deg,var(--leaf) 0 28px,var(--paper) 28px 56px);position:relative}
+.awning::after{content:"";position:absolute;left:0;right:0;bottom:-12px;height:12px;
+  background:radial-gradient(circle at 14px 0,var(--leaf) 13px,transparent 14px) 0 0/56px 12px repeat-x,
+             radial-gradient(circle at 42px 0,var(--paper) 13px,transparent 14px) 0 0/56px 12px repeat-x}
+
+.wrap{max-width:540px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));padding-block:40px 48px}
+
+.top .loc{font-family:var(--display);font-weight:700;font-size:1.45rem;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin:0}
+h1{font-family:var(--display);font-weight:800;font-size:3.6rem;line-height:.9;margin:.15em 0 .1em;color:var(--navy);text-transform:uppercase;letter-spacing:-.005em}
+.top .addr{font-family:var(--display);font-weight:700;font-size:1.8rem;margin:0;color:var(--ink)}
+.welcome{margin:22px 0 0;max-width:34em;font-size:1.15rem;line-height:1.5}
+
+h2{font-family:var(--display);font-weight:800;font-size:2.2rem;line-height:1;letter-spacing:.01em;text-transform:uppercase;color:var(--navy);margin:0 0 10px;padding-bottom:12px;position:relative;text-wrap:balance}
+h2::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;background:var(--leaf);border-radius:2px}
+section{margin-top:48px}
+
+/* contacto */
+.kv{display:flex;flex-direction:column}
+.kv .row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-block:12px;border-bottom:1px solid var(--rule)}
+.kv .k{font-family:var(--display);font-weight:600;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.kv .v{font-weight:700;font-size:1.3rem;color:var(--ink);user-select:all;word-break:break-word;min-width:0;font-variant-numeric:tabular-nums}
+.kv .row > div{min-width:0}
+.kv .row{align-items:center}
+button.copy{display:inline-flex;align-items:center;gap:6px;font:700 .9rem var(--body);letter-spacing:.02em;background:var(--paper);border:2px solid var(--navy);color:var(--navy);border-radius:8px;padding:8px 14px;cursor:pointer;flex-shrink:0;box-shadow:0 3px 0 var(--navy);transition:transform .08s,box-shadow .08s,background .15s}
+button.copy svg{width:16px;height:16px}
+button.copy:active{transform:translateY(3px);box-shadow:0 0 0 var(--navy)}
+button.copy.ok{background:var(--navy);color:var(--paper)}
+button.copy:focus-visible,a:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+
+/* normas */
+ol.rules{list-style:none;margin:0;padding:0;counter-reset:n}
+ol.rules li{counter-increment:n;display:grid;grid-template-columns:2.2rem 1fr;gap:4px 10px;padding-block:14px;border-bottom:1px solid var(--rule)}
+ol.rules li::before{content:counter(n);font-family:var(--display);font-weight:800;font-size:1.6rem;line-height:1.1;color:var(--navy);opacity:.35;grid-row:span 2}
+ol.rules b{font-family:var(--display);font-weight:700;font-size:1.4rem;line-height:1.1;text-transform:uppercase;color:var(--ink);letter-spacing:.01em}
+ol.rules li::before{opacity:.5}
+ol.rules span{color:#3a4756;font-size:1.1rem;line-height:1.45;margin-top:2px}
+
+.lead{margin:4px 0 0;padding-block:12px 4px;font-size:1.12rem;font-weight:600;color:var(--navy)}
+.ask{margin-top:16px;padding:16px 18px;border:2px solid var(--navy);border-radius:10px;background:var(--sky)}
+.ask p{margin:0;font-size:1.12rem;font-weight:600;line-height:1.45}
+.ask .p-tel{background:var(--paper)}
+.note{margin:24px 0 0;padding:16px 18px;background:var(--stripe);border-left:4px solid var(--navy);font-weight:700;font-size:1.12rem}
+
+/* emergencias */
+.sos{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+.sos a{display:flex;flex-direction:column;align-items:center;gap:4px;padding:16px 4px 14px;text-decoration:none;color:#fff;background:var(--red);border-radius:10px;box-shadow:0 4px 0 #8e2a1f;transition:transform .08s,box-shadow .08s}
+.sos a:active{transform:translateY(4px);box-shadow:0 0 0 #8e2a1f}
+.sos .n{font-family:var(--display);font-weight:800;font-size:2.8rem;line-height:1;font-variant-numeric:tabular-nums}
+.sos .l{font-family:var(--display);font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+
+/* datos útiles */
+.group{margin-top:18px}
+.group{margin-top:26px}
+.group h3{display:inline-block;font-family:var(--display);font-weight:700;font-size:1.05rem;letter-spacing:.12em;text-transform:uppercase;color:var(--paper);background:var(--navy);padding:4px 10px;border-radius:4px;margin:0 0 4px}
+ul.places{list-style:none;margin:0;padding:0}
+ul.places li{padding-block:14px;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:2px}
+.p-name{font-family:var(--display);font-weight:700;font-size:1.35rem;line-height:1.15;text-transform:uppercase;letter-spacing:.01em}
+.p-addr{display:flex;align-items:flex-start;gap:7px;color:var(--ink);font-size:1.12rem;font-weight:600;line-height:1.35;margin-top:2px}
+.p-addr svg{width:18px;height:18px;flex-shrink:0;margin-top:3px;color:var(--red)}
+.p-tel{display:inline-flex;align-items:center;gap:8px;width:fit-content;margin-top:10px;padding:9px 15px;font-size:1.08rem;border-radius:8px;background:var(--sky);border:2px solid var(--navy);color:var(--navy);font-weight:700;text-decoration:none;font-variant-numeric:tabular-nums;box-shadow:0 3px 0 var(--navy);transition:transform .08s,box-shadow .08s}
+.acts{display:flex;flex-wrap:wrap;gap:10px}
+.acts .p-tel,.acts .p-wa,.acts .p-mail{margin-top:10px}
+.kv .v{display:block;text-decoration:none}
+.kv .row{align-items:flex-start}
+.p-wa,.p-mail{display:inline-flex;align-items:center;gap:8px;width:fit-content;margin-top:10px;padding:9px 15px;font-size:1.08rem;border-radius:8px;font-weight:700;text-decoration:none;transition:transform .08s,box-shadow .08s}
+.p-wa{background:var(--navy);color:#fff;border:2px solid var(--navy);box-shadow:0 3px 0 #133f61}
+.p-mail{background:var(--sky);color:var(--navy);border:2px solid var(--navy);box-shadow:0 3px 0 var(--navy)}
+.p-wa:active,.p-mail:active{transform:translateY(3px);box-shadow:none}
+.p-wa svg,.p-mail svg{width:17px;height:17px;flex-shrink:0}
+.p-tel:active{transform:translateY(3px);box-shadow:0 0 0 var(--navy)}
+.p-tel svg{width:16px;height:16px;flex-shrink:0}
+
+footer{margin-top:48px;padding-top:20px;border-top:2px solid var(--navy)}
+footer p{margin:0;color:var(--muted);font-size:1.12rem}
+footer strong{display:block;font-family:var(--display);font-weight:800;font-size:2rem;text-transform:uppercase;color:var(--navy);line-height:1.1;margin-top:4px}
+</style>
+</head>
+<body>
+
+<div class="awning" aria-hidden="true"></div>
+
+<main class="wrap">
+  <div class="top">
+    <p class="loc">Santa Teresita · Buenos Aires</p>
+    <h1>Edificio Atlántico</h1>
+    <p class="addr">Av. 41 N° 258</p>
+    <p class="welcome">Estimados turistas: bienvenidos al que, por un tiempo, será su hogar. Les pedimos que lo traten con el mismo cuidado y dedicación que a su propia casa, a fin de que los próximos visitantes puedan disfrutar de su estadía de la misma manera.</p>
+  </div>
+
+  <section aria-labelledby="h-contacto">
+    <h2 id="h-contacto">Administración</h2>
+    <div class="kv">
+      <div class="row">
+        <div><div class="k">Teléfono</div><a class="v" href="tel:0224615408025">(02246) 15-408025</a>
+          <div class="acts"><a class="p-tel" href="tel:0224615408025">Llamar</a><a class="p-wa" href="https://wa.me/5492246408025" target="_blank" rel="noopener">WhatsApp</a></div></div>
+      </div>
+      <div class="row">
+        <div><div class="k">Email</div><a class="v" href="mailto:andrearusso1031@gmail.com">andrearusso1031@gmail.com</a>
+          <div class="acts"><a class="p-mail" href="mailto:andrearusso1031@gmail.com">Enviar email</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-normas">
+    <h2 id="h-normas">Normas del edificio</h2>
+    <p class="lead">Para que esto se materialice, solicitamos tener en cuenta lo siguiente:</p>
+    <ol class="rules">
+      <li><b>Puerta de entrada</b><span>Mantener la puerta de entrada correctamente cerrada las 24 horas del día (cerrando con llave de 22:00 a 06:00 h).</span></li>
+      <li><b>Ingreso de personas</b><span>No ingresar personas ajenas al grupo familiar que contrató el departamento. La administración se reserva el derecho de dar por concluida la reserva en caso de incumplimiento.</span></li>
+      <li><b>Horarios de descanso</b><span>Respetar los horarios de descanso, tanto diurnos como nocturnos.</span></li>
+      <li><b>Música y televisión</b><span>Escuchar música y mirar televisión con un volumen que no moleste a los vecinos.</span></li>
+      <li><b>Arena y sanitarios</b><span>No ingresar al edificio con los pies mojados y/o con arena, ni tirar papel higiénico en el inodoro. Las operaciones de destape deberán ser abonadas por el inquilino.</span></li>
+      <li><b>Consumo de energía</b><span>Apagar las luces, el ventilador y el televisor cuando el departamento se encuentre desocupado.</span></li>
+      <li><b>Llaves</b><span>Les pedimos extremar el cuidado de las llaves: su pérdida o mal uso será a costo total del ocupante.</span></li>
+      <li><b>Horario de retiro</b><span>Se recuerda que el horario de retiro no puede exceder el convenido en su contratación. Les pedimos comprensión, ya que hay otras personas esperando para ingresar.</span></li>
+    </ol>
+    <p class="note">Todo aquello que se rompa o deteriore por mal uso les será facturado al retirarse del edificio.</p>
+    <div class="ask">
+      <p>Para cualquier consulta o necesidad, comuníquese con la administración al teléfono que figura al comienzo de esta página.</p>
+      <div class="acts"><a class="p-tel" href="tel:0224615408025">(02246) 15-408025</a><a class="p-wa" href="https://wa.me/5492246408025" target="_blank" rel="noopener">WhatsApp</a></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-sos">
+    <h2 id="h-sos">Emergencias</h2>
+    <div class="sos">
+      <a href="tel:911"><span class="n">911</span><span class="l">Emergencias</span></a>
+      <a href="tel:100"><span class="n">100</span><span class="l">Bomberos</span></a>
+      <a href="tel:101"><span class="n">101</span><span class="l">Policía</span></a>
+      <a href="tel:107"><span class="n">107</span><span class="l">Ambulancia</span></a>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-datos">
+    <h2 id="h-datos">Datos útiles</h2>
+    <div class="group">
+      <h3>Salud y seguridad</h3>
+      <ul class="places">
+        <li><span class="p-name">Nuevo Hospital Municipal</span><span class="p-addr">Av. 41 y 16</span><a class="p-tel" href="tel:02246420381">Guardia: (02246) 42-0381</a><a class="p-tel" href="tel:02246430783">Turnos: (02246) 43-0783</a></li>
+        <li><span class="p-name">Comisaría</span><span class="p-addr">Av. 41 esq. 3</span><a class="p-tel" href="tel:02246422925">(02246) 42-2925</a><a class="p-tel" href="tel:02246420227">(02246) 42-0227</a></li>
+        <li><span class="p-name">Bomberos</span><span class="p-addr">Calle 8 N° 257, entre 29 y 30</span><a class="p-tel" href="tel:02246420596">(02246) 42-0596</a></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h3>Turismo</h3>
+      <ul class="places">
+        <li><span class="p-name">Información turística</span><span class="p-addr">Carabela Santa María, Av. Costanera entre 39 y 40</span><a class="p-tel" href="tel:02246421383">(02246) 42-1383</a></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h3>Bancos y pagos</h3>
+      <ul class="places">
+        <li><span class="p-name">Banco Macro · cajero Banelco</span><span class="p-addr">Calle 39 entre 2 y 3</span></li>
+        <li><span class="p-name">Banco Nación · cajero Link</span><span class="p-addr">Calle 37 entre 3 y 4</span></li>
+        <li><span class="p-name">Banco Provincia · cajero Link</span><span class="p-addr">Calle 2 esq. 37</span></li>
+        <li><span class="p-name">Provincia Net</span><span class="p-addr">Calle 3 entre 34 y 35</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>Muchas gracias por su consideración y colaboración. Les deseamos una</p>
+    <strong>¡Feliz estadía!</strong>
+  </footer>
+</main>
+
+<script>
+const phoneIc='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg>';
+const copyIc='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 011-1h10"/></svg>';
+const checkIc='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>';
+document.querySelectorAll('.p-tel').forEach(a=>a.insertAdjacentHTML('afterbegin',phoneIc));
+const waIc='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1112 20.5a8.4 8.4 0 01-4.3-1.2z"/><path d="M9 9.5c.3 2 2.5 4.2 4.5 4.5l1-1 1.7.8"/></svg>';
+const mailIc='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>';
+document.querySelectorAll('.p-wa').forEach(a=>a.insertAdjacentHTML('afterbegin',waIc));
+document.querySelectorAll('.p-mail').forEach(a=>a.insertAdjacentHTML('afterbegin',mailIc));
+const pinIc='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
+document.querySelectorAll('.p-addr').forEach(s=>{s.innerHTML=pinIc+'<span>'+s.innerHTML+'</span>'});
+document.querySelectorAll('button.copy').forEach(b=>{
+  const idle=copyIc+'<span>Copiar</span>';
+  b.innerHTML=idle;
+  b.addEventListener('click',()=>{
+    const done=()=>{b.innerHTML=checkIc+'<span>Copiado</span>';b.classList.add('ok');setTimeout(()=>{b.innerHTML=idle;b.classList.remove('ok')},1600)};
+    const fallback=()=>{const el=b.parentElement.querySelector('.v');const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r)};
+    try{navigator.clipboard.writeText(b.dataset.copy).then(done,fallback)}catch(e){fallback()}
+  });
+});
+</script>
+
+</body>
+</html>
